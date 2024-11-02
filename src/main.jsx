@@ -18,7 +18,8 @@ const router = createBrowserRouter([
     children:[
       {
         path: "/",
-        element: <HomeCenter></HomeCenter>
+        element: <HomeCenter></HomeCenter>,
+        loader: ()=> fetch('../public/booksData.json')
       },
       {
         path: "/listedBooks",
