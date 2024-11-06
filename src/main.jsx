@@ -10,6 +10,7 @@ import Home from './componants/Home/Home.jsx';
 import ListedBooks from './componants/ListedBooks/ListedBooks.jsx';
 import PagesToRead from './componants/PagestoRead/PagesToRead.jsx';
 import HomeCenter from './componants/Home/homeCenter.jsx';
+import SingleBook from './componants/Home/singleBook.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,11 +20,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeCenter></HomeCenter>,
-        loader: ()=> fetch('../public/booksData.json')
+        loader: ()=> fetch('../public/booksData.json'),
+        
+      },
+      {
+        path : "/book/:bookId",
+        element: <SingleBook></SingleBook>,
+        loader: ()=> fetch('../public/booksData.json'),
       },
       {
         path: "/listedBooks",
         element: <ListedBooks></ListedBooks>,
+        loader: ()=> fetch('../public/booksData.json'),
       },
       {
         path: "/pagestoRead",
